@@ -1,17 +1,23 @@
-const wrapTovar = document.querySelector('#wrap-tovar');
-const imgTovar = wrapTovar.querySelector('.tovar');
-const small = wrapTovar.querySelector('.small');
+const hue = document.querySelector('.hue');
+const grayscale = document.querySelector('.grayscale');
+const contrast = document.querySelector('.contrast');
+const opacity = document.querySelector('.opacity');
+const blure = document.querySelector('.blure');
 
-function changePhoto(e){
-    //closest
-    let link = e.target.closest('a');
-    
-    if(link){
-        let path = link.getAttribute('href');
-        imgTovar.src = path;
-    }
-  
-    e.preventDefault();
+const img = document.querySelector('img');
+
+function changeStyle() {
+    img.style.filter = `
+        hue-rotate(${hue.value}deg)
+        grayscale(${grayscale.value}%)
+        contrast(${contrast.value}%)
+        opacity(${opacity.value}%)
+        blur(${blure.value}px)
+    `
+
 }
-
-small.addEventListener('click', changePhoto);
+hue.addEventListener('input', changeStyle)
+grayscale.addEventListener('change', changeStyle)
+contrast.addEventListener('change', changeStyle)
+opacity.addEventListener('change', changeStyle);
+blure.addEventListener('change', changeStyle);

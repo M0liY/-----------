@@ -1,23 +1,11 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 .wrap{
-    width: 500px;
+    margin: 50px;
 }
-
-.small{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.small a,
-.small img{
+img{
+    width: 400px;
     display: block;
+    margin-bottom: 50px;
 }
-
-.small img{
-    width: 100%;
+label{
+    display: block;
 }
